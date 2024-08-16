@@ -72,3 +72,90 @@ snippet java-mem-prompt:
               .onError(Throwable::printStackTrace).start();
         })
         .onError(Throwable::printStackTrace).start();
+
+snippet java-rag-dependency:
+  name: "java-rag-dependency"
+  prefix: "java-06-rag-dependency"
+  scope: "java"
+  body: |
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j-ovh-ai</artifactId>
+      <version>${langchain4j.version}</version>
+    </dependency>
+
+snippet java-rag-chunk:
+  name: "java-rag-chunk"
+  prefix: "java-07-rag-chunk"
+  scope: "java"
+  body: |
+    DocumentParser documentParser = new TextDocumentParser();
+    Document document = loadDocument(
+      RAGStreamingChatbot.class.getResource("/rag-files/content.txt").getFile(),
+      documentParser
+    );
+    DocumentSplitter splitter = DocumentSplitters.recursive(300, 0);
+
+    List<TextSegment> segments = splitter.split(document);
+
+snippet java-rag-embed:
+  name: "java-rag-embed"
+  prefix: "java-08-rag-embed"
+  scope: "java"
+  body: |
+    // Do the embeddings and store them in an embedding store
+    EmbeddingModel embeddingModel = OvhAiEmbeddingModel.withApiKey(OVHCLOUD_API_KEY);
+    List<Embedding> embeddings = embeddingModel.embedAll(segments).content();
+
+snippet java-rag-store:
+  name: "java-rag-store"
+  prefix: "java-09-rag-store"
+  scope: "java"
+  body: |
+    EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+    embeddingStore.addAll(embeddings, segments);
+    ContentRetriever contentRetriever = EmbeddingStoreContentRetriever.builder()
+      .embeddingStore(embeddingStore)
+      .embeddingModel(embeddingModel)
+      .maxResults(5)
+      .minScore(0.9)
+    .build();
+
+snippet java-rag-model:
+  name: "java-rag-model"
+  prefix: "java-10-rag-model"
+  scope: "java"
+  body: |
+    MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()
+      .apiKey(OVHCLOUD_API_KEY)
+      .modelName("Mistral-7B-Instruct-v0.2")
+      .baseUrl(
+        "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1"
+      )
+      .maxTokens(512)
+      .build();
+
+snippet java-rag-assistant:
+  name: "java-rag-assistant"
+  prefix: "java-11-rag-assistant"
+  scope: "java"
+  body: |
+    Assistant assistant = AiServices
+      .builder(Assistant.class)
+      .streamingChatLanguageModel(streamingChatModel)
+      .contentRetriever(contentRetriever)
+      .build();
+
+snippet java-rag-prompt:
+  name: "java-rag-prompt"
+  prefix: "java-12-rag-prompt"
+  scope: "java"
+  body: |
+    _LOG.info("\n💬: What is AI Endpoints?\n");
+
+    TokenStream tokenStream = assistant.chat("Can you explain me what is AI Endpoints?");
+    _LOG.info("🤖: ");
+    tokenStream
+        .onNext(_LOG::info)
+        .onError(Throwable::printStackTrace)
+        .start();
