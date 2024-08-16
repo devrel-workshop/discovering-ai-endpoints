@@ -1,0 +1,74 @@
+snippet java-mem-dependencies:
+  name: "java-mem-dependencies"
+  prefix: "java-01-mem-dependencies"
+  scope: "java"
+  body: |
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j</artifactId>
+      <version>${langchain4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j-mistral-ai</artifactId>
+      <version>${langchain4j.version}</version>
+    </dependency>
+
+snippet java-mem-interface:
+  name: "java-mem-interface"
+  prefix: "java-02-mem-interface"
+  scope: "java"
+  body: |
+    interface Assistant {
+      TokenStream chat(String message);
+    }
+
+snippet java-mem-model:
+  name: "java-mem-model"
+  prefix: "java-03-mem-model"
+  scope: "java"
+  body: |
+    MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()
+        .apiKey(System.getenv("OVH_AI_ENDPOINTS_ACCESS_TOKEN"))
+        .modelName("Mistral-7B-Instruct-v0.2")
+        .baseUrl(
+            "https://mistral-7b-instruct-v02.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1")
+        .maxTokens(512)
+    .build();
+
+snippet java-mem-memory:
+  name: "java-mem-memory"
+  prefix: "java-03-mem-memory"
+  scope: "java"
+  body: |
+    ChatMemory chatMemory = MessageWindowChatMemory.withMaxMessages(10);
+
+snippet java-mem-assistant:
+  name: "java-mem-memory"
+  prefix: "java-04-mem-assistant"
+  scope: "java"
+  body: |
+    Assistant assistant = AiServices.builder(Assistant.class)
+        .streamingChatLanguageModel(streamingChatModel)
+        .chatMemory(chatMemory)
+    .build();
+
+snippet java-mem-prompt:
+  name: "java-mem-prompt"
+  prefix: "java-05-mem-prompt"
+  scope: "java"
+  body: |
+    _LOG.info("💬: My name is Stéphane.\n");
+    TokenStream tokenStream = assistant.chat("My name is Stéphane.");
+    _LOG.info("🤖: ");
+    tokenStream
+        .onNext(_LOG::info)
+        .onComplete(token -> {
+          _LOG.info("\n💬: Do you remember what is my name?\n");
+          _LOG.info("🤖: ");
+          assistant.chat("Do you remember what is my name?")
+              .onNext(_LOG::info)
+              .onError(Throwable::printStackTrace).start();
+        })
+        .onError(Throwable::printStackTrace).start();

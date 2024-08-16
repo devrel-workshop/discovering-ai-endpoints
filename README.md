@@ -40,3 +40,10 @@ pip install -r requirements.txt
 cd javascript
 npm install
 ```
+
+## ☕️ Java ☕️
+
+```bash
+cd java
+mvn clean compile
+```
