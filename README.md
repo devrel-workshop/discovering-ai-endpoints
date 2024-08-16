@@ -9,3 +9,27 @@ At any moment you can switch to another branch to go to a specific step of the t
 # ⚙️ Setup ⚙️
 
 A `.env` file is needed in order to run the examples. You can copy the `.env.example` file and rename it as `.env`.
+
+## 📝 Snippets 📝
+
+The repository contains VSCode snippets to help you with the code.
+One file by language: 
+  - `python.code-snippets` for Python
+
+Each of this files is created using the tools [snippets](https://github.com/bots-garden/snippets).
+Here is an example of usage: 
+```bash
+snippets generate \
+  --input ./.vscode/python-snippets.yml \
+  --output ./.vscode/python.code-snippets
+```
+
+## 🐍 Python 🐍
+
+Create a virtual environment and install the dependencies:
+```bash
+cd python
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
