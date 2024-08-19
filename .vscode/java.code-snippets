@@ -96,11 +96,12 @@
       ""
     ],
     "description": "",
-    "prefix": "java-11-rag-assistant",
+    "prefix": "java-12-rag-assistant",
     "scope": "java"
   },
   "java-rag-chunk": {
     "body": [
+      "// Load the document and split it into chunks",
       "DocumentParser documentParser = new TextDocumentParser();",
       "Document document = loadDocument(",
       "  RAGStreamingChatbot.class.getResource(\"/rag-files/content.txt\").getFile(),",
@@ -112,7 +113,7 @@
       ""
     ],
     "description": "",
-    "prefix": "java-07-rag-chunk",
+    "prefix": "java-08-rag-chunk",
     "scope": "java"
   },
   "java-rag-dependency": {
@@ -125,8 +126,8 @@
       ""
     ],
     "description": "",
-    "prefix": "java-06-rag-dependency",
-    "scope": "java"
+    "prefix": "java-07-rag-dependency",
+    "scope": "xml"
   },
   "java-rag-embed": {
     "body": [
@@ -136,7 +137,7 @@
       ""
     ],
     "description": "",
-    "prefix": "java-08-rag-embed",
+    "prefix": "java-09-rag-embed",
     "scope": "java"
   },
   "java-rag-model": {
@@ -152,7 +153,7 @@
       ""
     ],
     "description": "",
-    "prefix": "java-10-rag-model",
+    "prefix": "java-11-rag-model",
     "scope": "java"
   },
   "java-rag-prompt": {
@@ -167,7 +168,7 @@
       "    .start();"
     ],
     "description": "",
-    "prefix": "java-12-rag-prompt",
+    "prefix": "java-13-rag-prompt",
     "scope": "java"
   },
   "java-rag-store": {
@@ -183,7 +184,7 @@
       ""
     ],
     "description": "",
-    "prefix": "java-09-rag-store",
+    "prefix": "java-10-rag-store",
     "scope": "java"
   }
 }

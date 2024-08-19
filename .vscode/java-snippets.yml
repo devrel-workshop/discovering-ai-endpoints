@@ -75,8 +75,8 @@ snippet java-mem-prompt:
 
 snippet java-rag-dependency:
   name: "java-rag-dependency"
-  prefix: "java-06-rag-dependency"
-  scope: "java"
+  prefix: "java-07-rag-dependency"
+  scope: "xml"
   body: |
     <dependency>
       <groupId>dev.langchain4j</groupId>
@@ -86,9 +86,10 @@ snippet java-rag-dependency:
 
 snippet java-rag-chunk:
   name: "java-rag-chunk"
-  prefix: "java-07-rag-chunk"
+  prefix: "java-08-rag-chunk"
   scope: "java"
   body: |
+    // Load the document and split it into chunks
     DocumentParser documentParser = new TextDocumentParser();
     Document document = loadDocument(
       RAGStreamingChatbot.class.getResource("/rag-files/content.txt").getFile(),
@@ -100,7 +101,7 @@ snippet java-rag-chunk:
 
 snippet java-rag-embed:
   name: "java-rag-embed"
-  prefix: "java-08-rag-embed"
+  prefix: "java-09-rag-embed"
   scope: "java"
   body: |
     // Do the embeddings and store them in an embedding store
@@ -109,7 +110,7 @@ snippet java-rag-embed:
 
 snippet java-rag-store:
   name: "java-rag-store"
-  prefix: "java-09-rag-store"
+  prefix: "java-10-rag-store"
   scope: "java"
   body: |
     EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
@@ -123,7 +124,7 @@ snippet java-rag-store:
 
 snippet java-rag-model:
   name: "java-rag-model"
-  prefix: "java-10-rag-model"
+  prefix: "java-11-rag-model"
   scope: "java"
   body: |
     MistralAiStreamingChatModel streamingChatModel = MistralAiStreamingChatModel.builder()
@@ -137,7 +138,7 @@ snippet java-rag-model:
 
 snippet java-rag-assistant:
   name: "java-rag-assistant"
-  prefix: "java-11-rag-assistant"
+  prefix: "java-12-rag-assistant"
   scope: "java"
   body: |
     Assistant assistant = AiServices
@@ -148,7 +149,7 @@ snippet java-rag-assistant:
 
 snippet java-rag-prompt:
   name: "java-rag-prompt"
-  prefix: "java-12-rag-prompt"
+  prefix: "java-13-rag-prompt"
   scope: "java"
   body: |
     _LOG.info("\n💬: What is AI Endpoints?\n");
