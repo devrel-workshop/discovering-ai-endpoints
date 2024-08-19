@@ -1,7 +1,6 @@
 snippet js-str-dependencies:
   name: "js-str-dependencies"
   prefix: "js-01-str-dependencies"
-  scope: "javascript"
   body: |
       "@langchain/mistralai": "0.0.28",
       "@langchain/openai": "0.2.6",
