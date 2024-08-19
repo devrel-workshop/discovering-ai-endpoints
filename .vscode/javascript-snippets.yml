@@ -4,9 +4,8 @@ snippet js-str-dependencies:
   scope: "javascript"
   body: |
       "@langchain/mistralai": "0.0.28",
-      "@langchain/openai": "0.2.6",
-      "commander": "12.1.0",
-      "langchain": "0.2.16"
+      "langchain": "0.2.16",
+      "dotenv" :"16.4.5"
 
 snippet js-str-model:
   name: "js-str-model"
