@@ -3,10 +3,10 @@
     "body": [
       "response = chain.invoke(\"What is OVHcloud?\")",
       "",
-      "print(f\"🤖: {response.content}\")"
+      "print(f\"🤖: {text}\")"
     ],
     "description": "",
-    "prefix": "10-langchain-blk-call",
+    "prefix": "11-langchain-blk-call",
     "scope": "python"
   },
   "langchain-blk-chain": {
@@ -15,7 +15,7 @@
       ""
     ],
     "description": "",
-    "prefix": "09-langchain-blk-chain",
+    "prefix": "10-langchain-blk-chain",
     "scope": "python"
   },
   "langchain-blk-model": {
@@ -27,7 +27,7 @@
       ""
     ],
     "description": "",
-    "prefix": "07-langchain-blk-model",
+    "prefix": "08-langchain-blk-model",
     "scope": "python"
   },
   "langchain-blk-prompt": {
@@ -39,7 +39,7 @@
       ""
     ],
     "description": "",
-    "prefix": "08-langchain-blk-prompt",
+    "prefix": "09-langchain-blk-prompt",
     "scope": "python"
   },
   "langchain-blk-requirements": {
@@ -51,8 +51,8 @@
       ""
     ],
     "description": "",
-    "prefix": "05-langchain-blk-requirements",
-    "scope": "python"
+    "prefix": "07-langchain-blk-requirements",
+    "scope": ""
   },
   "simple-request": {
     "body": [
@@ -80,7 +80,7 @@
     ],
     "description": "",
     "prefix": "01-simple-requirements",
-    "scope": "python"
+    "scope": ""
   },
   "simple-system-message": {
     "body": [
