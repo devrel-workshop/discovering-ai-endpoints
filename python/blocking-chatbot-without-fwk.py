@@ -37,6 +37,6 @@ if response.status_code == 200:
     for choice in choices:
         text = choice["message"]["content"]
         # Process text and finish_reason
-        print(f"🤖: {response.content}")
+        print(f"🤖: {text}")
 else:
     print("Error:", response.status_code)
