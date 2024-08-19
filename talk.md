@@ -22,3 +22,14 @@
 - 📁 open the [blocking-chatbot-langchain](./python/blocking-chatbot-langchain.py)
 - 📝 use the snippets as written in the comments
 - ⚡️ run the script: `cd python` && `python blocking-chatbot-langchain.py`
+
+## 🕸️ JavaScript demo 🕸️
+
+### 💬 Streaming chatbot with LangChain 💬
+
+- ⬇️ In the [package.json](./javascript/package.json) file, declare the dependencies: `js-01-str-dependencies`
+- 📁 open the [chatbot-streaming](./javascript/chatbot-streaming.js)
+- 📝 use the snippets as written in the comments
+- ⚡️ run the script: `cd javascript` && `node chatbot-streaming.js`
+
+
