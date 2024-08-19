@@ -7,7 +7,7 @@
 - ⬇️ be sure that all Python, JavaScript and Java dependencies are installed see [README](./README.md) for mote details.
   - activate the Python virtuel environment: `source .venv/bin/activate`
 
-## 🐍 Python demo 🐍
+## 🐍 Python demos 🐍
 
 ### 🛑 Blocking chatbot with no Framework 🛑
 
@@ -23,7 +23,7 @@
 - 📝 use the snippets as written in the comments
 - ⚡️ run the script: `cd python` && `python blocking-chatbot-langchain.py`
 
-## 🕸️ JavaScript demo 🕸️
+## 🕸️ JavaScript demos 🕸️
 
 ### 💬 Streaming chatbot with LangChain 💬
 
@@ -32,4 +32,22 @@
 - 📝 use the snippets as written in the comments
 - ⚡️ run the script: `cd javascript` && `node chatbot-streaming.js`
 
+## ☕️ Java demos ☕️
 
+### 🧠 Memory chatbot with LangChain4j 🧠
+
+- ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-01-mem-dependencies`
+- 📁 open the [MemoryStreamingChatbot](./java/src/main/java/com/ovhcloud/examples/aiendpoints/MemoryStreamingChatbot.java)
+- 📝 use the snippets as written in the comments
+- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- 🫣 comment the line 37
+- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+
+### 🗃️ RAG with LangChain4j 🗃️
+
+- ⬇️ In the [pom.xml](./java/pom.xml) file, declare the dependencies: `java-07-rag-dependency`
+- 📁 open the [RAGStreamingChatbot](./java/src/main/java/com/ovhcloud/examples/aiendpoints/RAGStreamingChatbot.java)
+- 📝 use the snippets as written in the comments
+- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view
+- 🫣 comment the line 76
+- ⚡️ run the main class with VSCode debug view and `DEBUG CONSOLE` view

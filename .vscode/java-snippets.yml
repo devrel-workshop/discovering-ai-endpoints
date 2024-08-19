@@ -1,7 +1,7 @@
 snippet java-mem-dependencies:
   name: "java-mem-dependencies"
   prefix: "java-01-mem-dependencies"
-  scope: "java"
+  scope: "xml"
   body: |
     <dependency>
       <groupId>dev.langchain4j</groupId>
@@ -45,7 +45,7 @@ snippet java-mem-memory:
     ChatMemory chatMemory = MessageWindowChatMemory.withMaxMessages(10);
 
 snippet java-mem-assistant:
-  name: "java-mem-memory"
+  name: "java-mem-assistant"
   prefix: "java-05-mem-assistant"
   scope: "java"
   body: |
@@ -76,7 +76,7 @@ snippet java-mem-prompt:
 snippet java-rag-dependency:
   name: "java-rag-dependency"
   prefix: "java-07-rag-dependency"
-  scope: "java"
+  scope: "xml"
   body: |
     <dependency>
       <groupId>dev.langchain4j</groupId>
