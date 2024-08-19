@@ -1,4 +1,16 @@
 {
+  "java-mem-assistant": {
+    "body": [
+      "Assistant assistant = AiServices.builder(Assistant.class)",
+      "    .streamingChatLanguageModel(streamingChatModel)",
+      "    .chatMemory(chatMemory)",
+      ".build();",
+      ""
+    ],
+    "description": "",
+    "prefix": "java-05-mem-assistant",
+    "scope": "java"
+  },
   "java-mem-dependencies": {
     "body": [
       "\u003cdependency\u003e",
@@ -16,7 +28,7 @@
     ],
     "description": "",
     "prefix": "java-01-mem-dependencies",
-    "scope": "java"
+    "scope": "xml"
   },
   "java-mem-interface": {
     "body": [
@@ -31,14 +43,11 @@
   },
   "java-mem-memory": {
     "body": [
-      "Assistant assistant = AiServices.builder(Assistant.class)",
-      "    .streamingChatLanguageModel(streamingChatModel)",
-      "    .chatMemory(chatMemory)",
-      ".build();",
+      "ChatMemory chatMemory = MessageWindowChatMemory.withMaxMessages(10);",
       ""
     ],
     "description": "",
-    "prefix": "java-04-mem-assistant",
+    "prefix": "java-04-mem-memory",
     "scope": "java"
   },
   "java-mem-model": {
@@ -74,7 +83,7 @@
       ""
     ],
     "description": "",
-    "prefix": "java-05-mem-prompt",
+    "prefix": "java-06-mem-prompt",
     "scope": "java"
   }
 }

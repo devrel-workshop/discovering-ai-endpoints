@@ -1,7 +1,7 @@
 snippet java-mem-dependencies:
   name: "java-mem-dependencies"
   prefix: "java-01-mem-dependencies"
-  scope: "java"
+  scope: "xml"
   body: |
     <dependency>
       <groupId>dev.langchain4j</groupId>
@@ -39,14 +39,14 @@ snippet java-mem-model:
 
 snippet java-mem-memory:
   name: "java-mem-memory"
-  prefix: "java-03-mem-memory"
+  prefix: "java-04-mem-memory"
   scope: "java"
   body: |
     ChatMemory chatMemory = MessageWindowChatMemory.withMaxMessages(10);
 
 snippet java-mem-assistant:
-  name: "java-mem-memory"
-  prefix: "java-04-mem-assistant"
+  name: "java-mem-assistant"
+  prefix: "java-05-mem-assistant"
   scope: "java"
   body: |
     Assistant assistant = AiServices.builder(Assistant.class)
@@ -56,7 +56,7 @@ snippet java-mem-assistant:
 
 snippet java-mem-prompt:
   name: "java-mem-prompt"
-  prefix: "java-05-mem-prompt"
+  prefix: "java-06-mem-prompt"
   scope: "java"
   body: |
     _LOG.info("💬: My name is Stéphane.\n");
