@@ -1,7 +1,6 @@
 snippet simple-requirements:
   name: "simple-requirements"
   prefix: "01-simple-requirements"
-  scope: "python"
   body: |
     # Manage dot file like `.env`file
     python-dotenv==1.0.1
@@ -73,8 +72,7 @@ snippet simple-call:
 
 snippet langchain-blk-requirements:
   name: "langchain-blk-requirements"
-  prefix: "05-langchain-blk-requirements"
-  scope: "python"
+  prefix: "07-langchain-blk-requirements"
   body: |
     # Some usefull tools from LangChain
     langchain-core==0.2.32
@@ -83,7 +81,7 @@ snippet langchain-blk-requirements:
 
 snippet langchain-blk-model:
   name: "langchain-blk-model"
-  prefix: "07-langchain-blk-model"
+  prefix: "08-langchain-blk-model"
   scope: "python"
   body: |
     model = ChatMistralAI(model="Mistral-7B-Instruct-v0.2", 
@@ -93,7 +91,7 @@ snippet langchain-blk-model:
 
 snippet langchain-blk-prompt:
   name: "langchain-blk-prompt"
-  prefix: "08-langchain-blk-prompt"
+  prefix: "09-langchain-blk-prompt"
   scope: "python"
   body: |
     prompt = ChatPromptTemplate.from_messages([
@@ -103,16 +101,16 @@ snippet langchain-blk-prompt:
 
 snippet langchain-blk-chain:
   name: "langchain-blk-chain"
-  prefix: "09-langchain-blk-chain"
+  prefix: "10-langchain-blk-chain"
   scope: "python"
   body: |
     chain = prompt | model
 
 snippet langchain-blk-call:
   name: "langchain-blk-call"
-  prefix: "10-langchain-blk-call"
+  prefix: "11-langchain-blk-call"
   scope: "python"
   body: |
     response = chain.invoke("What is OVHcloud?")
 
-    print(f"🤖: {response.content}")
+    print(f"🤖: {text}")
