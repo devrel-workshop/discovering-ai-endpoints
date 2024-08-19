@@ -1,8 +1,14 @@
 # Configuration
 .env
+.vscode/launch.json
+.vscode/settings.json
+.idea
 
 # Python
 .venv
 
 # JavaScript
 node_modules
+
+# Java
+target
