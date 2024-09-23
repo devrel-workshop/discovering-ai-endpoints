@@ -15,7 +15,8 @@ A `.env` file is needed in order to run the examples. You can copy the `.env.exa
 The repository contains VSCode snippets to help you with the code.
 One file by language: 
   - `python.code-snippets` for Python
-
+  - `javascript.code-snippets` for JavaScript
+  
 Each of this files is created using the tools [snippets](https://github.com/bots-garden/snippets).
 Here is an example of usage: 
 ```bash
